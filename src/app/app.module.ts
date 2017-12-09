@@ -15,6 +15,7 @@ import {app_routing} from "./app.routes";
 //Servicios
 import {InformacionService} from "./services/informacion.service";
 import {ProductosService} from "./services/productos.service";
+import { BuscarComponent } from './components/buscar/buscar.component';
 
 //Componentes
 @NgModule({
@@ -24,7 +25,8 @@ import {ProductosService} from "./services/productos.service";
     FooterComponent,
     PortafolioComponent,
     AboutComponent,
-    ItemComponent
+    ItemComponent,
+    BuscarComponent
   ],
   imports: [
     BrowserModule,
