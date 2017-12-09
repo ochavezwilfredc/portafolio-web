@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
+
 @Injectable()
 export class ProductosService {
   productos: any = [];
@@ -22,5 +23,9 @@ export class ProductosService {
               }
             )
     }
+
+  public cargar_producto(cod:string){
+    return this.http.get(`https://webangular-c5058.firebaseio.com/productos/${cod}.json`)
+  }
 
 }
