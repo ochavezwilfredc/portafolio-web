@@ -8,6 +8,6 @@ import { InformacionService } from './services/informacion.service';
 })
 export class AppComponent {
   constructor(public _is:InformacionService){
-
+    
   }
 }
