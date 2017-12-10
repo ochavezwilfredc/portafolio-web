@@ -10,12 +10,13 @@ import { ProductosService } from '../../services/productos.service';
 export class BuscarComponent implements OnInit {
 
   termino: any = undefined;
-  constructor(private route:ActivatedRoute,
-              private _ps:ProductosService) {
-    route.params.subscribe( parametros =>{
-        this.termino = parametros['termino'];
-        console.log(this.termino);
-        _ps.buscar_producto(this.termino);
+  constructor(public route: ActivatedRoute,
+              public _ps: ProductosService) {
+
+    route.params.subscribe(parametros => {
+      this.termino = parametros['termino'];
+      //console.log(this.termino);
+      _ps.buscar_producto(this.termino);
     });
   }
 

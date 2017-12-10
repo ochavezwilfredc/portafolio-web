@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   constructor( public _is:InformacionService,
-               private router:Router) { }
+               public router:Router) { }
 
   ngOnInit() {
   }

@@ -4,10 +4,12 @@ import { Http } from '@angular/http';
 
 @Injectable()
 export class ProductosService {
-  productos: any = [];
-  productos_filtrados: any = [];
-  cargando: boolean = true;
+   public productos: any = [];
+   public productos_filtrados: any = [];
+   public cargando = true;
+
   constructor(public http: Http) {
+    //this.cargando = true;
     this.cargar_productos();
   }
 
@@ -32,8 +34,6 @@ export class ProductosService {
     return this.http.get(`https://webangular-c5058.firebaseio.com/productos/${cod}.json`)
   }
 
-
-
   public buscar_producto(termino: string) {
     // console.log("Buscar Producto");
     // console.log(this.productos.length);
@@ -48,7 +48,7 @@ export class ProductosService {
     }
   }
 
-  private filtrar_productos(termino: string) {
+  public filtrar_productos(termino: string) {
     this.productos_filtrados = [];
     termino = termino.toLowerCase();
 

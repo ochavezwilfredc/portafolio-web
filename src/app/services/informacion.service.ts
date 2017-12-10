@@ -3,10 +3,10 @@ import { Http } from '@angular/http';
 
 @Injectable()
 export class InformacionService {
-  info: any = {};
-  cargada: boolean = false;
-  cargada_sobre_nosotros: boolean = false;
-  equipo: any = [];
+  public info: any = {};
+  public cargada = false;
+  public cargada_sobre_nosotros: boolean = false;
+  public equipo: any = [];
 
   constructor(public http: Http) {
         this.carga_info();

@@ -11,22 +11,22 @@ export class ItemComponent implements OnInit {
   producto: any = undefined;
   cod: string = undefined;
 
-  constructor(private route:ActivatedRoute,
-              private _ps:ProductosService) {
+  constructor(public route: ActivatedRoute,
+    public _ps: ProductosService) {
 
-      route.params.subscribe( parametros =>{
-        //console.log(parametros);
-        //console.log(parametros['id']);
+    route.params.subscribe(parametros => {
+      //console.log(parametros);
+      //console.log(parametros['id']);
 
-        _ps.cargar_producto(parametros['id'])
-            .subscribe(
-                res =>{
-                  this.cod = parametros['id'];
-                  this.producto=res.json();
-                  console.log(this.producto);
-                }
-              )
-            })
+      _ps.cargar_producto(parametros['id'])
+        .subscribe(
+        res => {
+          this.cod = parametros['id'];
+          this.producto = res.json();
+          //console.log(this.producto);
+        }
+        )
+    })
   }
 
   ngOnInit() {
